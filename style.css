@@ -1,0 +1,161 @@
+/* style.css */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Weather Container */
+.weather-forecast {
+  background: rgba(255,255,255,0.85);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.2);
+  padding: 2rem 3rem;
+  text-align: center;
+  max-width: 350px;
+}
+
+/* Weather Icon Styles */
+.weather-icon {
+  margin: 1rem auto;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+/* Sun */
+.sun {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #ffe066 70%, #ffd700 100%);
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  box-shadow: 0 0 40px 10px #ffe06688;
+}
+
+/* Cloud */
+.cloud {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  width: 60px;
+  height: 36px;
+  background: #e0e7ef;
+  border-radius: 50px 50px 40px 40px;
+  box-shadow: 20px 0 0 0 #e0e7ef, 40px 0 0 0 #e0e7ef;
+}
+
+/* Rain */
+.rain {
+  position: absolute;
+  left: 50px;
+  bottom: -10px;
+  width: 6px;
+  height: 20px;
+  background: linear-gradient(to bottom, #4fc3f7 60%, #0288d1 100%);
+  border-radius: 3px;
+  animation: rain-fall 1s linear infinite;
+}
+
+@keyframes rain-fall {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(20px); opacity: 0;}
+}
+
+/* Weather Info */
+.weather-info {
+  margin-top: 1.5rem;
+}
+
+.weather-temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.weather-desc {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Example: Show different weather by toggling classes on .weather-icon in HTML */
+/* For sunny: <div class="weather-icon sun"></div> */
+/* For cloudy: <div class="weather-icon cloud"></div> */
+/* For rainy: <div class="weather-icon cloud"><div class="rain"></div></div> */
+
+/* Forecast Days */
+.forecast-days {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.forecast-day {
+  flex: 1;
+  margin: 0 0.3rem;
+  background: #f7fafc;
+  border-radius: 10px;
+  padding: 0.7rem 0.2rem;
+  box-shadow: 0 2px 8px 0 rgba(31,38,135,0.07);
+}
+
+.forecast-day .day {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.forecast-day .icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  display: block;
+}
+
+.forecast-day .temp {
+  color: #0288d1;
+  font-weight: bold;
+  margin-top: 0.2rem;
+}
+
+/* Example usage in weather.html:
+<div class="weather-forecast">
+  <div class="weather-icon sun"></div>
+  <div class="weather-info">
+    <div class="weather-temp">28°C</div>
+    <div class="weather-desc">Sunny</div>
+  </div>
+  <div class="forecast-days">
+    <div class="forecast-day">
+      <div class="day">Mon</div>
+      <div class="icon sun"></div>
+      <div class="temp">28°C</div>
+    </div>
+    <div class="forecast-day">
+      <div class="day">Tue</div>
+      <div class="icon cloud"></div>
+      <div class="temp">24°C</div>
+    </div>
+    <div class="forecast-day">
+      <div class="day">Wed</div>
+      <div class="icon cloud"></div>
+      <div class="temp">22°C</div>
+    </div>
+  </div>
+</div>
+*/
